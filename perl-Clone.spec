@@ -1,6 +1,6 @@
 %define real_name Clone
 %define name perl-%{real_name}
-%define version 0.20
+%define version 0.23
 %define release %mkrel 1
 
 Summary: 	Clone module for Perl
