@@ -1,19 +1,18 @@
-%define real_name Clone
-%define name perl-%{real_name}
-%define version 0.23
+%define module Clone
+%define name perl-%{module}
+%define version 0.27
 %define release %mkrel 1
 
-Summary: 	Clone module for Perl
 Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
+Summary: 	Recursively copy Perl datatypes
 License: 	GPL or Artistic
 Group: 		Development/Perl
-Source: 	http://www.cpan.org/authors/id/GAAS/%{real_name}-%{version}.tar.bz2
-Url: 		http://search.cpan.org/dist/%{real_name}
+Source: 	http://search.cpan.org/CPAN/authors/id/R/RD/RDF/%{module}-%{version}.tar.gz
+Url: 		http://search.cpan.org/dist/%{module}
 BuildRequires:	perl-devel
-BuildRoot: 	%{_tmppath}/%{name}-buildroot/
-Requires: 	perl
+BuildRoot: 	%{_tmppath}/%{name}-%{version}
 
 %description
 This module provides a clone() method which makes recursive
@@ -21,8 +20,7 @@ copies of nested hash, array, scalar and reference types,
 including tied variables and objects.
 
 %prep
-%setup -q -n %{real_name}-%{version}
-find -type f | xargs chmod 644
+%setup -q -n %{module}-%{version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -32,11 +30,11 @@ find -type f | xargs chmod 644
 %make test
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall_std
 
 %clean 
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
