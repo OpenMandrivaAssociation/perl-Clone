@@ -12,7 +12,6 @@ Group: 		Development/Perl
 Source: 	http://search.cpan.org/CPAN/authors/id/R/RD/RDF/%{module}-%{version}.tar.gz
 Url: 		http://search.cpan.org/dist/%{module}
 BuildRequires:	perl-devel
-BuildRoot: 	%{_tmppath}/%{name}-%{version}
 
 %description
 This module provides a clone() method which makes recursive
