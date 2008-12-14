@@ -1,6 +1,6 @@
 %define module Clone
 %define name perl-%{module}
-%define version 0.29
+%define version 0.30
 %define release %mkrel 1
 
 Name: 		%{name}
