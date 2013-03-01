@@ -1,14 +1,15 @@
 %define upstream_name    Clone
-%define upstream_version 0.31
+%define upstream_version 0.34
 
 Summary:	Recursively copy Perl datatypes
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	9
+Release:	1
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://search.cpan.org/CPAN/authors/id/R/RD/RDF/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://search.cpan.org/CPAN/authors/id/G/GA/GARU/%{upstream_name}-%{upstream_version}.tar.gz
+Source100:	%name.rpmlintrc
 
 BuildRequires:	perl-devel
 

@@ -1,0 +1,2 @@
+# Workaround for debuginfo not doing the 100% right thing for perl modules
+addFilter("E: debuginfo-without-sources")
