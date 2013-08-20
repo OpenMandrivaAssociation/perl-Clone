@@ -9,8 +9,7 @@ License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
 Source0:	http://search.cpan.org/CPAN/authors/id/G/GA/GARU/%{upstream_name}-%{upstream_version}.tar.gz
-Source100:	%name.rpmlintrc
-
+Source100:	%{name}.rpmlintrc
 BuildRequires:	perl-devel
 
 %description
@@ -35,5 +34,5 @@ including tied variables and objects.
 %doc Changes
 %{perl_vendorarch}/Clone.pm
 %{perl_vendorarch}/auto/Clone
-%{_mandir}/*/*
+%{_mandir}/man3/*
 
