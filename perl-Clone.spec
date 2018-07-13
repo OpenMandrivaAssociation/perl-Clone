@@ -10,6 +10,7 @@ Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
 Source0:	http://search.cpan.org/CPAN/authors/id/G/GA/GARU/%{upstream_name}-%{upstream_version}.tar.gz
 Source100:	%{name}.rpmlintrc
+BuildRequires:	perl(Test::More)
 BuildRequires:	perl-devel
 
 %description
