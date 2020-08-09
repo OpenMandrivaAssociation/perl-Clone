@@ -1,6 +1,8 @@
 %define upstream_name Clone
 %define upstream_version 0.34
 
+%define debug_package %{nil}
+
 Summary:	Recursively copy Perl datatypes
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
