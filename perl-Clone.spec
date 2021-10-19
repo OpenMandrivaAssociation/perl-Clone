@@ -1,12 +1,10 @@
 %define upstream_name Clone
 %define upstream_version 0.34
 
-%define debug_package %{nil}
-
 Summary:	Recursively copy Perl datatypes
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	14
+Release:	15
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
@@ -21,21 +19,20 @@ copies of nested hash, array, scalar and reference types,
 including tied variables and objects.
 
 %prep
-%setup -qn %{upstream_name}-%{upstream_version}
+%autosetup -p1 -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-%make
+perl Makefile.PL INSTALLDIRS=vendor
+%make_build
 
 %check
 %make test
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc Changes
 %{perl_vendorarch}/Clone.pm
 %{perl_vendorarch}/auto/Clone
-%{_mandir}/man3/*
-
+%doc %{_mandir}/man3/*
