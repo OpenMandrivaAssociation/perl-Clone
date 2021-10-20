@@ -1,3 +1,6 @@
+# Work around incomplete debug packages
+%global _empty_manifest_terminate_build 0
+
 %define upstream_name Clone
 %define upstream_version 0.34
 
