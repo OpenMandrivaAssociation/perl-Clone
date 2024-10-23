@@ -1,19 +1,20 @@
-# Work around incomplete debug packages
-%global _empty_manifest_terminate_build 0
-
+%bcond_with test
 %define upstream_name Clone
-%define upstream_version 0.34
+%undefine _debugsource_packages
 
 Summary:	Recursively copy Perl datatypes
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	16
+Version:	0.47
+Release:	1
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://search.cpan.org/CPAN/authors/id/G/GA/GARU/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://metacpan.org/pod/Clone
+Source0:	https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC/Clone-%{version}.tar.gz
 Source100:	%{name}.rpmlintrc
+%if %{with test}
 BuildRequires:	perl(Test::More)
+BuildRequires:	perl(B::COW)
+%endif
 BuildRequires:	perl-devel
 
 %description
@@ -22,14 +23,16 @@ copies of nested hash, array, scalar and reference types,
 including tied variables and objects.
 
 %prep
-%autosetup -p1 -n %{upstream_name}-%{upstream_version}
+%autosetup -p1 -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
 %make_build
 
+%if %{with test}
 %check
 %make test
+%endif
 
 %install
 %make_install
