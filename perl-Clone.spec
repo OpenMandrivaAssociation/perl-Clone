@@ -16,6 +16,7 @@ BuildRequires:	perl(Test::More)
 BuildRequires:	perl(B::COW)
 %endif
 BuildRequires:	perl-devel
+BuildRequires:	make
 
 %description
 This module provides a clone() method which makes recursive
