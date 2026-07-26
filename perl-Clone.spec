@@ -4,11 +4,11 @@
 
 Summary:	Recursively copy Perl datatypes
 Name:		perl-%{upstream_name}
-Version:	0.47
-Release:	2
+Version:	0.50
+Release:	1
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://metacpan.org/pod/Clone
+Url:		https://github.com/garu/Clone
 Source0:	https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC/Clone-%{version}.tar.gz
 Source100:	%{name}.rpmlintrc
 %if %{with test}
